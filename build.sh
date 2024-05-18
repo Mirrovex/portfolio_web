@@ -15,6 +15,10 @@ python3 manage.py collectstatic --noinput --clear
 # uname -a
 # cat /proc/version
 
+echo "Installing libjpeg..."
 yum install libjpeg-turbo
 yum install libjpeg
+
+echo "Libjpeg settings..."
 find /usr/lib* -name "libjpeg.so.62"
+echo $LD_LIBRARY_PATH

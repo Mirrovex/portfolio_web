@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # Build the project
+
+echo "Installing libjpeg..."
+yum install libjpeg libjpeg-devel libpng-devel libjpeg-turbo libjpeg-turbo-devel --assumeyes
+
+echo "Libjpeg settings..."
+find /usr/lib* -name "libjpeg.so.62"
+echo $LD_LIBRARY_PATH
+
+
 echo "Building the project..."
 python3 -m pip install -r requirements.txt
 
@@ -15,10 +24,4 @@ python3 manage.py collectstatic --noinput --clear
 # uname -a
 # cat /proc/version
 
-echo "Installing libjpeg..."
-yum install libjpeg install libjpeg-turbo libjpeg-turbo-devel --assumeyes
-yum install libjpeg-devel libpng-devel libtiff-devel freetype-devel zlib-devel --assumeyes
-
-echo "Libjpeg settings..."
-find /usr/lib* -name "libjpeg.so.62"
-echo $LD_LIBRARY_PATH
+python3 -m pip install --force-reinstall Pillow

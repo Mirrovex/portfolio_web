@@ -16,8 +16,8 @@ python3 manage.py collectstatic --noinput --clear
 # cat /proc/version
 
 echo "Installing libjpeg..."
-yum install libjpeg install libjpeg-turbo libjpeg-turbo-devel --noinput
-yum install libjpeg-devel libpng-devel libtiff-devel freetype-devel zlib-devel --noinput
+yum install libjpeg install libjpeg-turbo libjpeg-turbo-devel --assumeyes
+yum install libjpeg-devel libpng-devel libtiff-devel freetype-devel zlib-devel --assumeyes
 
 echo "Libjpeg settings..."
 find /usr/lib* -name "libjpeg.so.62"

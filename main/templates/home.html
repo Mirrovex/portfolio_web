@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Home Page
+{% endblock title %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock extrahead %}
+    
+
+{% block content %}
+    <div class="container">
+        <h1>Cześć, jestem <span class="highlight">Filip</span>,</h1>
+        <h2>Fullstack Developer</h2>
+        <div class="icon-container">
+            <a class="icon-link" href="https://github.com/Mirrovex">
+                <img src="{% static 'icons/github-mark.png' %}" class="medium-icon github-icon" />
+            </a>
+            <a class="icon-link" href="https://linkedin.com/in/filip-mickiewicz">
+                <img src="{% static 'icons/linkedin.png' %}" class="medium-icon linkedin-icon" />
+            </a>
+        </div>
+        <div class="button-container">
+            <a class="empty-button" href="{% url 'projects:projects' %}">
+                Moje projekty
+                <span class="arrow">➜</span>
+            </a>
+        </div>
+    </div>
+    <footer>
+        Strona zrobiona przez Filipa Mickiewicza
+    </footer>
+{% endblock content %}
+    

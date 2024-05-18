@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Projects Page
+{% endblock title %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock extrahead %}
+    
+
+{% block content %}
+    <div class="filters">
+        <input id="name-search" class="form-control me-2" type="search" placeholder="Search by name..." aria-label="Search">
+
+        <div class="tags-list">
+            {% for tag in tags %}
+                <button class="btn btn-secondary tag" data-tag="{{ tag.name|lower }}">
+                    {% if tag.icon %}
+                        <img src="{{ tag.get_image_url }}" class="icon" style="{{ tag.style }}" />
+                    {% endif %}
+                    {{ tag.name }}
+                </button>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row row-cols-4 row-cols-md-3 g-4 project-list">
+    </div>
+    <nav class="pagination-nav">
+    </nav>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/projects.js' %}"></script>
+{% endblock extra_js %}

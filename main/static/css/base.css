@@ -1,0 +1,28 @@
+.logo {
+    border-radius: 100%;
+    margin: 10px;
+    height: 50px;
+    margin: 5px;
+}
+
+.navbar-collapse {
+    justify-content: right;
+}
+
+.icon {
+    height: 20px;
+    margin-top: -5px;
+    margin-right: 2px;
+}
+
+.white-icon {
+    filter: brightness(0) invert(1);
+}
+
+.pagination-nav {
+    padding-top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    width: min-content;
+}

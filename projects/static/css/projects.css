@@ -1,0 +1,21 @@
+.tag {
+    margin-top: 10px;
+}
+
+.project-list {
+    margin: 0;
+}
+
+.card-img-top {
+    height: 15vw;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card {
+    padding: 10px;
+}
+
+.tag.active {
+    background: #2b3035;
+}

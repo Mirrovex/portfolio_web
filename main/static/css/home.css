@@ -1,0 +1,52 @@
+h1 {
+    font-size: 64px;
+}
+h2 {
+    font-size: 40px;
+}
+footer {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container {
+    text-align: center;
+    margin-top: 14vh;
+}
+.highlight {
+    color: #2f76ab;
+}
+
+.icon-container {
+    margin-top: 5vh;
+}
+.medium-icon {
+    height: 30px;
+    margin: 0 10px;
+}
+
+.button-container {
+    margin-top: 2vh;
+}
+.empty-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2b3035;
+    text-decoration: none;
+    border: 2px solid #2b3035;
+    border-radius: 5px;
+}
+.empty-button .arrow {
+    display: inline-block;
+    margin-left: 10px;
+    transition: margin-left 0.3s;
+}
+.empty-button:focus {
+    outline: none;
+}

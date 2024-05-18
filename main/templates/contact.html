@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Contact Page
+{% endblock title %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock extrahead %}
+    
+
+{% block content %}
+    <h1>This is contact page</h1>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/contact.js' %}"></script>
+{% endblock extra_js %}

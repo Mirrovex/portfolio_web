@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Project Page
+{% endblock title %}
+
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+{% endblock extrahead %}
+    
+
+{% block content %}
+    <h1>{{ project.0 }}</h1>
+    <div class="row row-cols-1 row-cols-md-1 g-4 project-card">
+        <div class="card project" data-name="{{ project.title|lower }}" data-tags="{{ project.tags.all|join:', '|lower }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <div class="card-links">
+                    {% if project.github %}
+                        <a href="{{ project.github }}" class="btn btn-secondary">
+                            <img src="{% static 'icons/github-mark-white.png' %}" class="icon github-icon white-icon" />
+                            Github
+                        </a>
+                    {% endif %}
+                    {% if project.website %}
+                        <a href="{{ project.website }}" class="btn btn-secondary">
+                            <img src="{% static 'icons/website.png' %}" class="icon website-icon white-icon" />
+                            Website
+                        </a>
+                    {% endif %}
+                </div>
+                <p class="card-text">{{ project.description }}</p>
+                <footer>
+                    <a href="{% url 'projects:projects' %}" class="btn btn-secondary">Back</a>
+                    <p class="tags">Tags: {{ project.tags.all|join:', ' }}</p>
+                </footer>
+            </div>
+            {% if project.images.all %}
+                <div class="carousel slide">
+                    <div class="carousel-inner">
+                        {% for image in project.images.all %}
+                            <div class="carousel-item">
+                                <img src="{{ image.image.url }}" class="d-block" />
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" onclick="moveSlide(-1)" >
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" onclick="moveSlide(1)" >
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            {% else %}
+                <div class="carousel-white slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="{% static 'icons/no-image.png' %}" class="d-block no-image" />
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extra_js %}
+    <script src="{% static 'js/project.js' %}"></script>
+{% endblock extra_js %}

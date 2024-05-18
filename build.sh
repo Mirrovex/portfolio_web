@@ -15,4 +15,4 @@ python3 manage.py collectstatic --noinput --clear
 # uname -a
 # cat /proc/version
 
-yum install libjpeg-turbo-devel
+yum install libjpeg

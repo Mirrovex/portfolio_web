@@ -12,15 +12,22 @@ echo "Collect Static..."
 python3 manage.py collectstatic --noinput --clear
 
 
-if [[ $(uname) == 'Linux' ]]; then
-    echo "System operacyjny: Linux"
-elif [[ $(uname) == 'Darwin' ]]; then
-    echo "System operacyjny: macOS"
-elif [[ $(uname) == 'MINGW'* ]]; then
-    echo "System operacyjny: Windows"
+if command -v apt-get &> /dev/null; then
+    echo "System operacyjny: Debian/Ubuntu"
+    # Tutaj użyj komendy apt-get
+    # Na przykład:
+    # apt-get update
+    # apt-get install -y nazwa_pakietu
+# Sprawdź, czy apk jest dostępny (Alpine Linux)
+elif command -v apk &> /dev/null; then
+    echo "System operacyjny: Alpine Linux"
+    # Tutaj użyj komendy apk
+    # Na przykład:
+    # apk update
+    # apk add nazwa_pakietu
 else
     echo "Nieznany system operacyjny"
 fi
 
-
-apt-get install libjpeg62
+apk search libjpeg
+apk add libjpeg62

@@ -11,6 +11,6 @@ python3 manage.py migrate --noinput
 echo "Collect Static..."
 python3 manage.py collectstatic --noinput --clear
 
-
-docker run -it nazwa_obrazu /bin/sh
-apk --no-cache add libjpeg-turbo-dev
+cat /etc/os-release
+uname -a
+cat /proc/version

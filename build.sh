@@ -11,6 +11,8 @@ python3 manage.py migrate --noinput
 echo "Collect Static..."
 python3 manage.py collectstatic --noinput --clear
 
-cat /etc/os-release
-uname -a
-cat /proc/version
+# cat /etc/os-release
+# uname -a
+# cat /proc/version
+
+yum install libjpeg-turbo-devel

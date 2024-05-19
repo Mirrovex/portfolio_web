@@ -10,6 +10,7 @@
     height: 15vw;
     object-fit: cover;
     border-radius: 4px;
+    min-height: 190px;
 }
 
 .card {
@@ -18,4 +19,8 @@
 
 .tag.active {
     background: #2b3035;
+}
+
+.project {
+    min-width: 378px;
 }

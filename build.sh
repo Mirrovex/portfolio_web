@@ -11,7 +11,9 @@ echo " -> LIBJPEG"
 
 
 yum update -y
-yum install -y libjpeg-turbo libjpeg-turbo-devel gcc python3-devel
+yum install -y libjpeg-turbo libjpeg-turbo-devel gcc python3-devel zlib-devel freetype-devel
+
+export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 
 
 echo "Building the project..."

@@ -1,3 +1,17 @@
+:root {
+    height: 90vh;
+}
+
+body, main {
+    height: 100%;
+}
+
+.base-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .logo {
     border-radius: 100%;
     margin: 10px;

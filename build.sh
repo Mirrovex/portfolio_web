@@ -3,7 +3,7 @@
 # Build the project
 
 echo "Installing libjpeg..."
-yum install libjpeg libjpeg-devel libpng-devel libjpeg-turbo libjpeg-turbo-devel --assumeyes
+yum install libjpeg libjpeg-dev libjpeg-devel libpng-devel libjpeg-turbo libjpeg-turbo-devel --assumeyes
 
 echo "Libjpeg settings..."
 find /usr/lib* -name "libjpeg.so.62"

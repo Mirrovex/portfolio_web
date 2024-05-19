@@ -5,11 +5,18 @@
 #echo "Installing libjpeg..."
 #yum install libjpeg libjpeg-dev libjpeg-devel libpng-devel libjpeg-turbo libjpeg-turbo-devel --assumeyes
 
+
+echo "Sprawdzanie instalacji libjpeg:"
+yum update -y && yum install -y libjpeg-dev libjpeg
+
+ls -l /usr/lib64/libjpeg*
+ls -l /usr/lib/libjpeg*
+
 # Tworzenie symbolic linku do libjpeg.so.62
 ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so.62 /usr/lib/libjpeg.so.62
 
 #echo "Libjpeg settings..."
-#find /usr/lib* -name "libjpeg.so.62"
+find /usr/lib* -name "libjpeg.so.62"
 #echo $LD_LIBRARY_PATH
 
 

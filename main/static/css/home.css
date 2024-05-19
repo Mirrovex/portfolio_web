@@ -6,15 +6,13 @@ h2 {
 }
 footer {
     text-align: center;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 20px;
 }
 
 .container {
     text-align: center;
     margin-top: 14vh;
+    flex: 1;
 }
 .highlight {
     color: #2f76ab;

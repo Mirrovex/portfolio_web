@@ -28,7 +28,7 @@ function get_projects(page=null) {
                                 <a href="${project.project_url}">${project.title}</a>
                             </h5>
                             <p class="card-text">${project.description}</p>
-                            <footer class="tags">Tags: ${project.tags.join(', ')}</footer>
+                            <footer class="tags">Tagi: ${project.tags.join(', ')}</footer>
                         </div>
                     </div>
                 </div>`

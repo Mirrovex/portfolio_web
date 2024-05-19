@@ -11,14 +11,14 @@ echo " -> LIBJPEG"
 
 
 # Aktualizacja pakietów i instalacja libjpeg-turbo
-yun update -y && yun install -y libjpeg-turbo
+yum update -y && yum install -y libjpeg-turbo
 
 
 echo "Building the project..."
 python3 -m pip install -r requirements.txt
 
-# Sprawdzenie dostępności libjpeg w Pillow
-python -c "from PIL import Image; print('JPEG support:', 'jpeg' in Image.registered_extensions().values())"
+echo " -> Sprawdzenie dostępności libjpeg w Pillow"
+python3 -c "from PIL import Image; print('JPEG support:', 'jpeg' in Image.registered_extensions().values())"
 
 
 echo "Make Migrations..."

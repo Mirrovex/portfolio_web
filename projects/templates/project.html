@@ -28,14 +28,14 @@
                     {% if project.website %}
                         <a href="{{ project.website }}" class="btn btn-secondary">
                             <img src="{% static 'icons/website.png' %}" class="icon website-icon white-icon" />
-                            Website
+                            Strona
                         </a>
                     {% endif %}
                 </div>
                 <p class="card-text">{{ project.description }}</p>
                 <footer>
                     <a href="{% url 'projects:projects' %}" class="btn btn-secondary">Back</a>
-                    <p class="tags">Tags: {{ project.tags.all|join:', ' }}</p>
+                    <p class="tags">Tagi: {{ project.tags.all|join:', ' }}</p>
                 </footer>
             </div>
             {% if project.images.all %}

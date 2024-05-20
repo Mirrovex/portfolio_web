@@ -36,18 +36,40 @@ function get_projects(page=null) {
             projectsList.insertAdjacentHTML('beforeend', card);
         });
 
+        var previous_btn = "";
+        if (data.previous) {
+            previous_btn = `
+            <a class="page-link" href="#" aria-label="Previous" onclick="get_projects('${data.previous}')">
+                <span aria-hidden="true">&laquo;</span>
+            </a>`;
+        } else {
+            previous_btn = `
+            <a class="page-link disabled" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>`;
+        }
+        
+        var next_btn = "";
+        if (data.next) {
+            next_btn = `
+            <a class="page-link" href="#" aria-label="Next" onclick="get_projects('${data.next}')">
+                <span aria-hidden="true">&raquo;</span>
+            </a>`;
+        } else {
+            next_btn = `
+            <a class="page-link disabled" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>`;
+        }
+
         const pagination = `
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous" onclick="get_projects('${data.previous}')">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
+                    ${previous_btn}
                 </li>
                 <li class="page-item"><a class="page-link" href="#">#</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next" onclick="get_projects('${data.next}')">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
+                    ${next_btn}
                 </li>
             </ul>`
 

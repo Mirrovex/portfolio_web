@@ -7,6 +7,7 @@ class Tag(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     icon = models.ImageField(upload_to='tag_icons/', blank=True)
+    icon_url = models.CharField(max_length=200, blank=True)
     style = models.TextField(blank=True, null=True)
     show = models.BooleanField(default=True)
     
@@ -14,8 +15,10 @@ class Tag(models.Model):
         return self.name
     
     def get_image_url(self):
-        if self.icon and os.path.exists(self.icon.path):
-            return self.icon.url
+        if self.icon:
+            return self.icon
+        elif self.icon_url:
+            return self.icon_url
         else:
             return static('icons/no-image.png')
 
@@ -36,6 +39,8 @@ class Project(models.Model):
         first_image = self.images.first()
         if first_image and first_image.image and os.path.exists(first_image.image.path):
             return first_image.image.url
+        elif first_image and first_image.image_url:
+            return first_image.image_url
         else:
             return static('icons/no-image.png')
 
@@ -43,7 +48,8 @@ class Project(models.Model):
 class ProjectImage(models.Model):
     
     project = models.ForeignKey(Project, related_name="images", on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="projects_images/")
+    image = models.ImageField(upload_to="projects_images/", blank=True)
+    image_url = models.CharField(max_length=200, blank=True)
 
     def __str__(self) -> str:
         return f"{self.project.title} Image"

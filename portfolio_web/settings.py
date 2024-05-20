@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG").lower() == "true"
 
 ALLOWED_HOSTS = ['*']
 
@@ -94,7 +94,7 @@ DATABASES = {
     }
 }
 
-if os.environ.get("DATABASE_URL") and os.environ.get("MODE") != "local":
+if os.environ.get("DATABASE_URL") != "__PLACEHOLDER__":
     DATABASES["default"] = dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 

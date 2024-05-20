@@ -40,3 +40,11 @@ body, main {
     position: relative;
     width: min-content;
 }
+
+.loading {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #636a71;
+    font-size: 20px;
+}

@@ -8,10 +8,10 @@ echo " -> LIBJPEG"
 yum update -y
 yum install -y libjpeg-turbo libjpeg-turbo-devel gcc python3-devel zlib-devel freetype-devel
 
-find /usr/lib* -name "libjpeg.so.62"
+#find /usr/lib* -name "libjpeg.so.62"
 
-export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
-echo $LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+#echo $LD_LIBRARY_PATH
 
 
 echo "Building the project..."

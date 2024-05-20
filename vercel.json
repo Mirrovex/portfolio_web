@@ -16,6 +16,9 @@
             }
         }
     ],
+    "env": {
+        "LD_LIBRARY_PATH": "/usr/lib64:/usr/local/lib"
+    },
     "routes": [
         {
             "src": "/static/(.*)",

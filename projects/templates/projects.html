@@ -19,7 +19,7 @@
         <div class="tags-list">
             {% for tag in tags %}
                 <button class="btn btn-secondary tag" data-tag="{{ tag.name|lower }}">
-                    {% if tag.icon %}
+                    {% if tag.get_image_url %}
                         <img src="{{ tag.get_image_url }}" class="icon" style="{{ tag.style }}" />
                     {% endif %}
                     {{ tag.name }}

@@ -15,3 +15,6 @@ up:
 
 shell:
 	python manage.py shell
+
+vercel:
+	vercel build

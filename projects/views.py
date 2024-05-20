@@ -29,7 +29,7 @@ class ProjectsView(generics.ListAPIView):
     def get_queryset(self):
         tag = self.request.query_params.get('tag', None)
         name = self.request.query_params.get('name', None)
-        queryset = Project.objects.all()
+        queryset = Project.objects.filter(show=True)
         if tag:
             queryset = queryset.filter(tags__name__icontains=tag)
         if name:

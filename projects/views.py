@@ -9,7 +9,7 @@ from .pagination import ProjectPagination
 
 def projects(request):
     pages = Settings.objects.first().pages.all()
-    projects = Project.objects.all()
+    projects = Project.objects.filter(show=True)
     tags = Tag.objects.all()
 
     return render(request, "projects.html", {'active_tab': 'projects', 'pages': pages, 'projects': projects, 'tags': tags})

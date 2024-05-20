@@ -45,6 +45,9 @@ footer {
     margin-left: 10px;
     transition: margin-left 0.3s;
 }
+.empty-button:hover .arrow {
+    margin-left: 15px;
+}
 .empty-button:focus {
     outline: none;
 }

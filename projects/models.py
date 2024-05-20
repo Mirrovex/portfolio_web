@@ -16,13 +16,14 @@ class Tag(models.Model):
     
     def get_image_url(self):
         if self.icon and os.path.exists(self.icon.path):
-            print("icon")
-            return self.icon.url
-        elif self.icon_url:
-            print("icon_url")
+            try:
+                self.icon.read()
+                return self.icon.url
+            except:
+                print("error reading icon")
+        if self.icon_url:
             return self.icon_url
         else:
-            print("none")
             return False
 
 
@@ -57,8 +58,12 @@ class ProjectImage(models.Model):
     
     def get_image_url(self):
         if self.image and os.path.exists(self.image.path):
-            return self.image.url
-        elif self and self.image_url:
+            try:
+                self.image.read()
+                return self.image.url
+            except:
+                print("error reading image")
+        if self.image_url:
             return self.image_url
         else:
             return static('icons/no-image.png')

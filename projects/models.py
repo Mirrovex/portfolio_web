@@ -8,6 +8,7 @@ class Tag(models.Model):
     name = models.CharField(max_length=100, unique=True)
     icon = models.ImageField(upload_to='tag_icons/', blank=True)
     style = models.TextField(blank=True, null=True)
+    show = models.BooleanField(default=True)
     
     def __str__(self) -> str:
         return self.name
@@ -26,6 +27,7 @@ class Project(models.Model):
     tags = models.ManyToManyField(Tag, related_name="projects")
     github = models.URLField(max_length=200, blank=True)
     website = models.URLField(max_length=200, blank=True)
+    show = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title

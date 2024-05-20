@@ -20,8 +20,6 @@ function get_projects(page=null) {
         throw new Error('Error connecting to /projects/list/', response.status);
     })
     .then(data => {
-        const projectsList = document.querySelector('.project-list');
-        const paginationNav = document.querySelector('.pagination-nav');
         projectsList.innerHTML = '';
         paginationNav.innerHTML = '';
 

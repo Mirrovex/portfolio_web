@@ -2,6 +2,15 @@ var tag_filter = "";
 var name_filter = "";
 
 function get_projects(page=null) {
+    const projectsList = document.querySelector('.project-list');
+    const paginationNav = document.querySelector('.pagination-nav');
+    projectsList.innerHTML = `
+        <div class="d-flex align-items-center loading">
+            <strong role="status">Loading...</strong>
+            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+        </div>`;
+    paginationNav.innerHTML = '';
+
     const url = page ? page : `/projects/list/?name=${name_filter}&tag=${tag_filter}`;
     fetch(url)
     .then(response => {
@@ -11,10 +20,9 @@ function get_projects(page=null) {
         throw new Error('Error connecting to /projects/list/', response.status);
     })
     .then(data => {
-        const projectsList = document.querySelector('.project-list');
-        const paginationNav = document.querySelector('.pagination-nav');
         projectsList.innerHTML = '';
         paginationNav.innerHTML = '';
+
         data.results.forEach(project => {
 
             const card = `

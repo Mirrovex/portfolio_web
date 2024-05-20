@@ -32,21 +32,11 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link {% if active_tab == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Strona główna</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link {% if active_tab == 'projects' %}active{% endif %}" href="{% url 'projects:projects' %}">Projekty</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link {% if active_tab == 'ratings' %}active{% endif %}" href="{% url 'ratings:ratings' %}">Opinie</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link {% if active_tab == 'about' %}active{% endif %}" href="{% url 'about' %}">O mnie</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link {% if active_tab == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Kontakt</a>
-                  </li>
+                    {% for page in pages %}
+                        <li class="nav-item">
+                          <a class="nav-link {% if active_tab == page.slug %}active{% endif %}" href="{% url page.get_url %}">{{ page.name }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
               </div>
             </div>

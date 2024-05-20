@@ -5,15 +5,13 @@
 
 echo " -> LIBJPEG"
 
-#echo "Libjpeg settings..."
-#find /usr/lib* -name "libjpeg.so.62"
-#echo $LD_LIBRARY_PATH
-
-
 yum update -y
 yum install -y libjpeg-turbo libjpeg-turbo-devel gcc python3-devel zlib-devel freetype-devel
 
+find /usr/lib* -name "libjpeg.so.62"
+
 export LD_LIBRARY_PATH=/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+echo $LD_LIBRARY_PATH
 
 
 echo "Building the project..."
@@ -30,9 +28,3 @@ python3 manage.py migrate --noinput
 
 echo "Collect Static..."
 python3 manage.py collectstatic --noinput --clear
-
-# cat /etc/os-release
-# uname -a
-# cat /proc/version
-
-#python3 -m pip install --force-reinstall Pillow

@@ -2,20 +2,23 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework import generics
 
 from .models import Project, Tag
+from main.models import Settings
 from .serializers import ProjectsSerializer
 from .pagination import ProjectPagination
 
 
 def projects(request):
+    pages = Settings.objects.first().pages.all()
     projects = Project.objects.all()
     tags = Tag.objects.all()
 
-    return render(request, "projects.html", {'active_tab': 'projects', 'projects': projects, 'tags': tags})
+    return render(request, "projects.html", {'active_tab': 'projects', 'pages': pages, 'projects': projects, 'tags': tags})
 
 
 def project(request, id):
+    pages = Settings.objects.first().pages.all()
     project = get_object_or_404(Project, id=id)
-    return render(request, "project.html", {'active_tab': 'projects', 'project': project})
+    return render(request, "project.html", {'active_tab': 'projects', 'pages': pages, 'project': project})
 
 
 class ProjectsView(generics.ListAPIView):

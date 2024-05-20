@@ -1,13 +1,18 @@
 from django.shortcuts import render
 
+from .models import Settings
+
 
 def home(request):
-    return render(request, "home.html", {'active_tab': 'home'})
+    pages = Settings.objects.first().pages.all()
+    return render(request, "home.html", {'active_tab': 'home', 'pages': pages})
 
 
 def about(request):
-    return render(request, "about.html", {'active_tab': 'about'})
+    pages = Settings.objects.first().pages.all()
+    return render(request, "about.html", {'active_tab': 'about', 'pages': pages})
 
 
 def contact(request):
-    return render(request, "contact.html", {'active_tab': 'contact'})
+    pages = Settings.objects.first().pages.all()
+    return render(request, "contact.html", {'active_tab': 'contact', 'pages': pages})

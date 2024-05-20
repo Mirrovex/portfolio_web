@@ -43,7 +43,7 @@
                     <div class="carousel-inner">
                         {% for image in project.images.all %}
                             <div class="carousel-item">
-                                <img src="{{ image.image.url }}" class="d-block" />
+                                <img src="{{ image.get_image_url }}" class="d-block" />
                             </div>
                         {% endfor %}
                     </div>

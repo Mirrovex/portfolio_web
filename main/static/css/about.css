@@ -1,0 +1,54 @@
+.container {
+    position: absolute;
+    max-width: -webkit-fill-available;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    left: 0;
+    padding: 1.5em .5em .5em 1.5em;
+    flex-wrap: wrap;
+}
+
+
+.left-container {
+    flex: 0;
+}
+.profile-image {
+    height: 25em;
+    border: solid 1px;
+    border-color: black;
+    border-radius: 10px;
+}
+.tag-container {
+    flex-wrap: wrap;
+}
+.tag-title {
+    padding-top: 0.5em;
+}
+.tag {
+    margin: 2px;
+    opacity: 1 !important;
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+
+
+.right-container {
+    min-width: 10em;
+    margin-left: 20px;
+    flex: 1;
+}
+.text-container {
+    flex: 1;
+    padding: 0em 8em 1em 2em;
+    font-size: 1.2em;
+}
+
+
+.icon-container {
+    text-align: right;
+}
+.medium-icon {
+    height: 30px;
+    margin: 0 5px;
+}

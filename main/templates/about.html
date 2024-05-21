@@ -13,5 +13,61 @@
     
 
 {% block content %}
-    <h1>Strona "O mnie" jest jeszcze robiona</h1>
+    <div class="container flexrow">
+        <div class="left-container flexcol">
+            <div class="image-container">
+                <img src="{{ settings.image.url }}" class="profile-image" />
+            </div>
+            <h1 class="tag-title">Technologie</h1>
+            <div class="tag-container flexrow">
+                {% for tag in tags %}
+                    <button class="btn btn-secondary tag" data-tag="{{ tag.name|lower }}" disabled>
+                        {% if tag.get_image_url %}
+                            <img src="{{ tag.get_image_url }}" class="icon" style="{{ tag.style }}" />
+                        {% endif %}
+                        {{ tag.name }}
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="right-container flexcol">
+            <div class="text-container">
+                <p>
+                    Swoją przygodę z programowaniem rozpocząłem jeszcze jako dziecko, tworząc i programując własne roboty LEGO Mindstorms.
+                    Już wtedy świat technologii wydawał mi się fascynujący i pociągający. Od tamtej pory systematycznie rozwijam swoje
+                    umiejętności, zdobywając wiedzę zarówno w zakresie języków programowania, jak i powiązanych technologii.
+                </p>
+                <p>
+                    Wielu języków programowania, analitycznego myślenia, rozwiązywania problemów, bibliotek, algorytmów i innych zagadnień
+                    nauczyłem się samodzielnie, więc zdecydowanie mogę powiedzieć, że szybkie przyswajanie nowej wiedzy jest jedną z moich
+                    zalet. Człowiek jednak uczy się przez całe życie, więc i ja nigdy nie przestałem się uczyć. Aktualnie uczęszczam do
+                    międzynarodowej szkoły programowania <a href="https://42warsaw.pl/">42Warsaw</a> i tworzę własne projekty usprawniające codzienne czynności.
+                </p>
+                <p>
+                    W Pythonie programuję od 2018 roku, w Javie (Android) od 2020 roku, a HTML, CSS i JavaScript od 2021 roku.
+                    Frameworku Django zacząłem używać dopiero w 2023 roku, ale dzięki zaawansowanej znajomości Pythona, szybko go opanowałem.
+                    To pozwoliło mi na zdobycie swojej pierwszej pełnowymiarowej pracy jako programista oraz stworzenie tej strony.
+                </p>
+                <p>
+                    Zawsze jestem zaangażowany w projekt i często wpadam na pomysły, jak można usprawnić działanie programu lub jakie
+                    dodatkowe funkcje można do niego dodać. Moja kreatywność i chęć ciągłego rozwoju wpływają na to, że często stawiam przed
+                    sobą nowe wyzwania. Nawet gdy zdarzy się sytuacja, że czegoś nie wiem, szybko znajduję potrzebne informacje i poszerzam
+                    swoją wiedzę.
+                </p>
+                <p>
+                    Dodatkowo, od kilku lat jestem mistrzem gry w grach RPG i właścicielem jednego z największych polskich serwerów do
+                    grania w gry fabularne na Discordzie. W wolnym czasie, poza programowaniem, wymyślam scenariusze i prowadzę sesje, co
+                    jeszcze bardziej rozwija moją kreatywność oraz umiejętności komunikacyjne.
+                </p>
+            </div>
+            <div class="icon-container">
+                <a class="icon-link" href="https://github.com/Mirrovex">
+                    <img src="{% static 'icons/github-mark.png' %}" class="medium-icon github-icon" />
+                </a>
+                <a class="icon-link" href="https://linkedin.com/in/filip-mickiewicz">
+                    <img src="{% static 'icons/linkedin.png' %}" class="medium-icon linkedin-icon" />
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

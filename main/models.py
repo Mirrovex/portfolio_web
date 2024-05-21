@@ -34,6 +34,7 @@ class Settings(models.Model):
     pages = models.ManyToManyField(Page)
     page_title = models.CharField(max_length=50, blank=True)
     contacts = models.ManyToManyField(Contact)
+    image = models.ImageField(upload_to="images/", blank=True)
 
     def __str__(self) -> str:
         return self.name

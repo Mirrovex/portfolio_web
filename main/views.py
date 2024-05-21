@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import EmailMessage
 
+from projects.models import Tag
 from .models import Settings
 from .forms import ContactForm
 
@@ -13,7 +14,8 @@ def home(request):
 
 def about(request):
     settings = Settings.objects.first()
-    return render(request, "about.html", {'active_tab': 'about', 'settings': settings})
+    tags = Tag.objects.all()
+    return render(request, "about.html", {'active_tab': 'about', 'settings': settings, 'tags': tags})
 
 
 def contact(request):

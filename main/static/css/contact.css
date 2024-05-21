@@ -52,3 +52,12 @@
     height: 30px;
     margin: 0 5px;
 }
+
+.button-container {
+    margin-top: 6px;
+    justify-content: space-between;
+    align-items: center;
+}
+.loading-container {
+    flex: 0.95;
+}

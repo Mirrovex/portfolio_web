@@ -6,7 +6,7 @@ function get_projects(page=null) {
     const paginationNav = document.querySelector('.pagination-nav');
     projectsList.innerHTML = `
         <div class="d-flex align-items-center loading">
-            <strong role="status">Loading...</strong>
+            <strong role="status">Ładowanie...</strong>
             <div class="spinner-border ms-auto" aria-hidden="true"></div>
         </div>`;
     paginationNav.innerHTML = '';

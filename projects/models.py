@@ -10,6 +10,10 @@ class Tag(models.Model):
     icon_url = models.URLField(max_length=200, blank=True)
     style = models.TextField(blank=True, null=True)
     show = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
     
     def __str__(self) -> str:
         return self.name
@@ -35,6 +39,10 @@ class Project(models.Model):
     github = models.URLField(max_length=200, blank=True)
     website = models.URLField(max_length=200, blank=True)
     show = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
 
     def __str__(self):
         return self.title

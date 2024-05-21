@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
+        {{ settings.page_title }}
         {% block title %}
-            Miro | Strona główna
+            Strona główna
         {% endblock title %}
     </title>
     <link rel="icon" href="{% static 'icons/pantera-icon.png' %}">
@@ -32,7 +33,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    {% for page in pages %}
+                    {% for page in settings.pages.all %}
                         <li class="nav-item">
                           <a class="nav-link {% if active_tab == page.slug %}active{% endif %}" href="{% url page.get_url %}">{{ page.name }}</a>
                         </li>

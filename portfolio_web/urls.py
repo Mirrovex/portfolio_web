@@ -21,9 +21,6 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
-    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-
     path('admin/', admin.site.urls),
 
     path('', include('main.urls')),
@@ -31,4 +28,8 @@ urlpatterns = [
     path('ratings/', include('ratings.urls')),
 ]
 
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    urlpatterns.append(re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}))
+    urlpatterns.append(re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}))

@@ -4,15 +4,15 @@ from .models import Settings
 
 
 def home(request):
-    pages = Settings.objects.first().pages.all()
-    return render(request, "home.html", {'active_tab': 'home', 'pages': pages})
+    settings = Settings.objects.first()
+    return render(request, "home.html", {'active_tab': 'home', 'settings': settings})
 
 
 def about(request):
-    pages = Settings.objects.first().pages.all()
-    return render(request, "about.html", {'active_tab': 'about', 'pages': pages})
+    settings = Settings.objects.first()
+    return render(request, "about.html", {'active_tab': 'about', 'settings': settings})
 
 
 def contact(request):
-    pages = Settings.objects.first().pages.all()
-    return render(request, "contact.html", {'active_tab': 'contact', 'pages': pages})
+    settings = Settings.objects.first()
+    return render(request, "contact.html", {'active_tab': 'contact', 'settings': settings})

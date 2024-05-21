@@ -3,7 +3,7 @@
 
 
 {% block title %}
-    Miro | Strona Główna
+    Strona Główna
 {% endblock title %}
 
 
@@ -35,4 +35,10 @@
         Strona zrobiona przez Filipa Mickiewicza
     </footer>
 {% endblock content %}
+
+
+{% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.js"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock extra_js %}
     

@@ -8,17 +8,17 @@ from .pagination import ProjectPagination
 
 
 def projects(request):
-    pages = Settings.objects.first().pages.all()
+    settings = Settings.objects.first()
     projects = Project.objects.filter(show=True)
     tags = Tag.objects.all()
 
-    return render(request, "projects.html", {'active_tab': 'projects', 'pages': pages, 'projects': projects, 'tags': tags})
+    return render(request, "projects.html", {'active_tab': 'projects', 'settings': settings, 'projects': projects, 'tags': tags})
 
 
 def project(request, id):
-    pages = Settings.objects.first().pages.all()
+    settings = Settings.objects.first()
     project = get_object_or_404(Project, id=id)
-    return render(request, "project.html", {'active_tab': 'projects', 'pages': pages, 'project': project})
+    return render(request, "project.html", {'active_tab': 'projects', 'settings': settings, 'project': project})
 
 
 class ProjectsView(generics.ListAPIView):

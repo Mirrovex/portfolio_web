@@ -48,10 +48,10 @@
                         {% endfor %}
                     </div>
                     <button class="carousel-control-prev" type="button" onclick="moveSlide(-1)" >
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <img class="arrow-icon" src="{% static 'icons/left-arrow.png' %}">
                     </button>
                     <button class="carousel-control-next" type="button" onclick="moveSlide(1)" >
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <img class="arrow-icon" src="{% static 'icons/right-arrow.png' %}">
                     </button>
                 </div>
             {% else %}

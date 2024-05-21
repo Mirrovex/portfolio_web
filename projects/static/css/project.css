@@ -53,3 +53,9 @@ footer {
 .tags {
     margin: 0 10px;
 }
+
+.arrow-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+}

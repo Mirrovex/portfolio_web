@@ -1,0 +1,54 @@
+.container {
+    justify-content: center;
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.text-container {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text-container h1 {
+    font-size: 5em;
+    inline-size: min-content;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 50px;
+}
+
+.text-container h2 {
+    font-size: 2em;
+}
+
+.form-container {
+    flex: 0.8;
+    justify-content: space-between;
+    border: solid 1px #2b3035;
+    border-radius: 30px;
+    padding: 40px 16px 15px 40px;
+    margin-left: 5vw;
+}
+
+.info-container {
+    flex: 0.8;
+}
+
+.alert {
+    position: absolute;
+    width: inherit;
+    margin-top: 22px;
+}
+
+.info-text-container {
+    flex: 1;
+}
+
+.icon-container {
+    text-align: right;
+}
+.medium-icon {
+    height: 30px;
+    margin: 0 5px;
+}

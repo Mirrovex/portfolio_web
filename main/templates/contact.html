@@ -13,7 +13,51 @@
     
 
 {% block content %}
-    <h1>Strona "Kontakt" jest jeszcze robiona</h1>
+    <div class="container flexrow">
+        <div class="text-container flexcol">
+            <h1>Masz zlecenie?</h1>
+            <h2>Napisz do mnie</h2>
+            <h2>--></h2>
+        </div>
+        <div class="form-container flexrow">
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+        
+                {% for field in form %}
+                    <div class="form-field-container">
+                        {{ field }}
+                        {% if field.errors %}
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                {{ field.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+        
+                <button type="submit" class="btn btn-primary btn-right">Wyślij</button>
+            </form>
+            <div class="info-container flexcol">
+                <div class="info-text-container">
+                    <h4>Email</h4>
+                    <p>mirrovex@wp.pl</p>
+
+                    <h4>Telefon</h4>
+                    <p>+48 506 708 959</p>
+                    
+                    <h4>Adres</h4>
+                    <p>Polska, Warszawa</p>
+                </div>
+                <div class="icon-container">
+                    <a class="icon-link" href="https://github.com/Mirrovex">
+                        <img src="{% static 'icons/github-mark.png' %}" class="medium-icon github-icon" />
+                    </a>
+                    <a class="icon-link" href="https://linkedin.com/in/filip-mickiewicz">
+                        <img src="{% static 'icons/linkedin.png' %}" class="medium-icon linkedin-icon" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
 
 

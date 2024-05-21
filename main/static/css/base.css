@@ -2,6 +2,15 @@
     height: 90vh;
 }
 
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+.flexcol {
+    display: flex;
+    flex-direction: column;
+}
+
 body, main {
     height: 100%;
 }
@@ -10,6 +19,13 @@ body, main {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.alert-error {
+    --bs-alert-color: var(--bs-danger-text-emphasis);
+    --bs-alert-bg: var(--bs-danger-bg-subtle);
+    --bs-alert-border-color: var(--bs-danger-border-subtle);
+    --bs-alert-link-color: var(--bs-danger-text-emphasis);
 }
 
 .logo {
@@ -47,4 +63,21 @@ body, main {
     transform: translateX(-50%);
     color: #636a71;
     font-size: 20px;
+}
+
+.btn-right {
+    float: right;
+    margin-left: 5px;
+}
+
+.form-field-container {
+    margin-top: 20px;
+}
+
+form > .form-field-container:first-of-type {
+    margin-top: 0;
+}
+
+form > .form-field-container:last-of-type {
+    margin-bottom: 20px;
 }

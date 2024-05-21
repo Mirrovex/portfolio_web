@@ -16,6 +16,7 @@ class Page(models.Model):
 class Settings(models.Model):
     name = models.CharField(max_length=100, unique=True)
     pages = models.ManyToManyField(Page)
+    page_title = models.CharField(max_length=50, blank=True)
 
     def __str__(self) -> str:
         return self.name

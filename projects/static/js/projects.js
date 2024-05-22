@@ -124,12 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
             buttonSearch.disabled = false;
         }
     })
+  
     buttonSearch.addEventListener("click", function filterProject() {
-        if (nameSearch.value) {
-            name_filter = nameSearch.value.toLowerCase();
-            get_projects();
-        } else {
-
-        }
+        name_filter = nameSearch.value.toLowerCase();
+        get_projects();
     })
 })

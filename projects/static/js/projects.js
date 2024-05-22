@@ -91,27 +91,10 @@ function get_projects(page=null) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const nameSearch = document.getElementById("name-search")
+    const buttonSearch = document.querySelector(".search-button")
     const tags = document.querySelectorAll(".tag")
 
     get_projects();
-
-
-    function filterProject() {
-        const nameQuery = nameSearch.value.toLowerCase();
-        /* const projects = document.querySelectorAll(".project")
-
-        projects.forEach((project) => {
-            const name = project.getAttribute('data-name');
-
-            if (name.includes(nameQuery)) {
-                project.style.display = "";
-            } else {
-                project.style.display = "none";
-            }
-        }) */
-        name_filter = nameQuery;
-        get_projects();
-    }
 
     tags.forEach((tag) => {
         tag.addEventListener("click", function () {
@@ -131,6 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
-    nameSearch.addEventListener("input", filterProject)
 
+    nameSearch.addEventListener("input", function filterProject() {
+        if (!nameSearch.value) {
+            name_filter = nameSearch.value.toLowerCase();
+            get_projects();
+        }
+    })
+    buttonSearch.addEventListener("click", function filterProject() {
+        name_filter = nameSearch.value.toLowerCase();
+        get_projects();
+    })
 })

@@ -117,12 +117,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     nameSearch.addEventListener("input", function filterProject() {
         if (!nameSearch.value) {
+            buttonSearch.disabled = true;
             name_filter = nameSearch.value.toLowerCase();
             get_projects();
+        } else {
+            buttonSearch.disabled = false;
         }
     })
     buttonSearch.addEventListener("click", function filterProject() {
-        name_filter = nameSearch.value.toLowerCase();
-        get_projects();
+        if (nameSearch.value) {
+            name_filter = nameSearch.value.toLowerCase();
+            get_projects();
+        } else {
+
+        }
     })
 })

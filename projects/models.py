@@ -9,7 +9,8 @@ class Tag(models.Model):
     icon = models.ImageField(upload_to='tag_icons/', blank=True)
     icon_url = models.URLField(max_length=200, blank=True)
     style = models.TextField(blank=True, null=True)
-    show = models.BooleanField(default=True)
+    show_projects = models.BooleanField(default=True)
+    show_about = models.BooleanField(default=True)
     order = models.PositiveIntegerField(default=0)
 
     class Meta:

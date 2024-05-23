@@ -10,7 +10,7 @@ from .pagination import ProjectPagination
 def projects(request):
     settings = Settings.objects.first()
     projects = Project.objects.filter(show=True)
-    tags = Tag.objects.filter(show=True)
+    tags = Tag.objects.filter(show_projects=True)
 
     return render(request, "projects.html", {'active_tab': 'projects', 'settings': settings, 'projects': projects, 'tags': tags})
 

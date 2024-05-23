@@ -20,7 +20,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class TagAdmin(admin.ModelAdmin):
 
-    list_display = ("name", "order", "show")
+    list_display = ("name", "order", "show_projects", "show_about")
     search_fields = ("name", )
     list_editable = ('order',)
 

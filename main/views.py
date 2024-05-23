@@ -14,7 +14,7 @@ def home(request):
 
 def about(request):
     settings = Settings.objects.first()
-    tags = Tag.objects.all()
+    tags = Tag.objects.filter(show_about=True)
     return render(request, "about.html", {'active_tab': 'about', 'settings': settings, 'tags': tags})
 
 
